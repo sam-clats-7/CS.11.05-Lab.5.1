@@ -193,7 +193,7 @@ public class Main {
             }
         }
         int index = 0;
-        String[] list = new String[a];
+        String[] list = new String[sigma];
         for(int i = 0; i<countries.length-1; i++){
             if(percentagesShareInPoverty[i] == 99.99){
                 list[index] = countries[i];
@@ -212,7 +212,7 @@ public class Main {
             }
         }
         int b = 0;
-        String[] list = new String[a];
+        String[] list = new String[index];
         for(int i = 0; i<countries.length-1; i++){
             if(confidences[i].equals("High Confidence")){
                 list[b] = countries[i];
