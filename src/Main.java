@@ -160,23 +160,66 @@ public class Main {
      * Misc Methods
      */
 
+
     public static int getCountryTotalWastePerYear(String country, String[] countries, int[] totalWasteKgPerCapitaPerYear)
     {
-        return -1;
+        for(int i = 0; i < countries.length-1; i++){
+            if(countries[i].equals(country)){
+                return totalWasteKgPerCapitaPerYear[i];
+            }
+        }
+        return 0;
     }
 
     public static String getCountryWithMostWastePerCapita(String[] countries, int[] totalWasteKgPerCapitaPerYear)
     {
-        return "";
+        int a = totalWasteKgPerCapitaPerYear[0];
+        int b = 0;
+        for(int i = 0; i < countries.length-1; i++){
+            if(totalWasteKgPerCapitaPerYear[i] > a){
+                a = totalWasteKgPerCapitaPerYear[i];
+                b = i;
+            }
+        }
+        return countries[b];
     }
 
     public static String[] getCountriesWithHighestPovertyPercentage(String[] countries, double[] percentagesShareInPoverty)
     {
-        return new String[0];
+        int sigma = 0;
+        for(double percentage : percentagesShareInPoverty){
+            if(percentage == 99.99){
+                sigma++;
+            }
+        }
+        int index = 0;
+        String[] list = new String[a];
+        for(int i = 0; i<countries.length-1; i++){
+            if(percentagesShareInPoverty[i] == 99.99){
+                list[index] = countries[i];
+                index++;
+            }
+        }
+        return list;
     }
 
     public static String[] getCountriesWithHighConfidence(String[] countries, String[] confidences)
     {
-        return new String[0];
+        int index = 0;
+        for(String confidence : confidences){
+            if(confidence.equals("High Confidence")){
+                index++;
+            }
+        }
+        int b = 0;
+        String[] list = new String[a];
+        for(int i = 0; i<countries.length-1; i++){
+            if(confidences[i].equals("High Confidence")){
+                list[b] = countries[i];
+                b++;
+            }
+        }
+        return list;
+
     }
 }
